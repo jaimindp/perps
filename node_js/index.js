@@ -33,6 +33,7 @@ async function main() {
 
   // Then we sign the hash
   // const res = await promisify(provider.provider.sendAsync)({
+  const account = await signer.getAddress();
   const res = await promisify(provider.send)({
     method: "eth_sign",
     params: [account.toLowerCase(), registerHash],
