@@ -1,13 +1,12 @@
 
 const ethers = require('ethers');
 const { promisify } = require('util');
-// const provider = ethers.getDefaultProvider();
-
-
+// const provider = ethers.getDefaultProvider()
+require('dotenv').config();
 const provider = new ethers.providers.JsonRpcProvider(process.env.ALCHEMY_RPC); // Use the ALCHEMY_RPC variable from .env
+// console.log(process.env.ALCHEMY_RPC);
 
 // Use the appropriate ethers.js methods for your operations
-
 async function main() {
   const signer = ethers.Wallet.createRandom();
 
@@ -33,7 +32,8 @@ async function main() {
   // Your existing code...
 
   // Then we sign the hash
-  const res = await promisify(provider.provider.sendAsync)({
+  // const res = await promisify(provider.provider.sendAsync)({
+  const res = await promisify(provider.send)({
     method: "eth_sign",
     params: [account.toLowerCase(), registerHash],
   });

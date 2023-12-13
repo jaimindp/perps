@@ -1,3 +1,6 @@
 [submodule "hyperliquid-python-sdk"]
 	path = hyperliquid-python-sdk
 	url = https://github.com/hyperliquid-dex/hyperliquid-python-sdk.git
+[submodule "aevo-sdk"]
+	path = aevo-sdk
+	url = https://github.com/aevoxyz/aevo-sdk.git
